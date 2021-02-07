@@ -1,3 +1,4 @@
 const express = require('express');
-
-module.exports = express();
+const app = express();
+app.use(express.json());
+module.exports = app

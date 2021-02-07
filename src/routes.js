@@ -1,12 +1,17 @@
-const testController = require('./controllers/test');
+const jobController = require('./controllers/jobController');
 
 
 module.exports = {
-    test(route) {
-        route.get('/', testController.index)
+    job(route) {
+        route.get('/jobs', jobController.index)
+        route.get('/jobs/:id', jobController.show)
+        route.post('/jobs', jobController.create)
+        route.put('/jobs', jobController.update)
+        route.delete('/jobs', jobController.delete)
+
     },
 
     init(route) {
-        this.test(route)
+        this.job(route);
     }
 }
