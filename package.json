@@ -2,9 +2,10 @@
   "name": "job_finder",
   "version": "1.0.0",
   "description": "Side Busca de Empregos",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,8 @@
   "homepage": "https://github.com/DanielGomes-Dev/Job-Finder#readme",
   "devDependencies": {
     "git-commit-msg-linter": "^3.0.0",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "sequelize-cli": "^6.2.0"
   },
   "dependencies": {
     "express": "^4.17.1",
