@@ -13,7 +13,9 @@ const set_job = async (id) => {
 module.exports = {
 
     async index(req, res) {
-        const jobs = await Job.findAll()
+        const jobs = await Job.findAll({
+            order: [['createdAt', 'DESC']]
+        })
         return res.json(jobs);
     },
 
