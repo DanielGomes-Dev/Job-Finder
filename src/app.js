@@ -1,21 +1,8 @@
-const express = require('express');
-const app = express();
-
+const app = require('./services/InitializeServer');
 const database = require('./database/connection');
 
+const routes = require('./routes')
+routes.init(app);
 
-//Databse Connection;
-database.authenticate()
-    .then(() => {
-        console.log('conectou');
-    })
-    .catch(err => {
-        console.log(err);
-    })
-
-//Routes
-app.get('/', (req, res) => {
-    res.json({ msg: 'ok' });
-})
 
 module.exports = app;

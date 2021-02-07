@@ -1,5 +1,12 @@
-// const app = require('./app');
+const testController = require('./controllers/test');
 
 
+module.exports = {
+    test(route) {
+        route.get('/', testController.index)
+    },
 
-// module.exports = app
+    init(route) {
+        this.test(route)
+    }
+}
