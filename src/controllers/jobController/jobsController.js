@@ -17,10 +17,13 @@ module.exports = {
         return newJob;
     },
 
-    update() {
-        return res.json({ msg: 'ok3' })
+    async update(id, jobUpdate) {
+        if (!valid.job(jobUpdate)) return { err: 'Invalid Params' };
+        const updatedJob = await Job.update(id, jobUpdate);
+        return updatedJob
     },
-    delete() {
-        return res.json({ msg: 'ok4' })
+    async delete(id) {
+        const deleted = await Job.delete(id);
+        return deleted;
     }
 }

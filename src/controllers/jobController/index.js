@@ -24,10 +24,14 @@ module.exports = {
         return res.json(saveJob);
     },
 
-    update() {
-        return res.json({ msg: 'ok3' })
+    async update(req, res) {
+        const updatedJob = get_params(req.body);
+        const saveJob = await jobController.update(updatedJob);
+        return res.json(saveJob);
     },
-    delete() {
-        return res.json({ msg: 'ok4' })
+    delete(req, res) {
+        const deleteJobById = req.params.id;
+        await jobController.delete(deleteJobById);
+        return res.status(200).json();
     }
 }
