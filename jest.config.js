@@ -7,9 +7,9 @@ module.exports = {
   roots: ['<rootDir>/src'],
   coverageDirectory: "coverage",
   collectCoverageFrom: ['<rootDir>/src/**/*.js'],
-  transform: {
-    '.+\\.js$': 'js-jest'
-  },
+  // transform: {
+  //   '.+\\.js$': 'js-jest'
+  // },
 
   // All imported modules in yo0ur tests should be mocked automatically
   // automock: false,
