@@ -20,7 +20,7 @@ module.exports = {
 
     async create(req, res) {
         const newJob = get_params(req.body);
-        const saveJob = jobController.create(newJob);
+        const saveJob = await jobController.create(newJob);
         return res.json(saveJob);
     },
 
